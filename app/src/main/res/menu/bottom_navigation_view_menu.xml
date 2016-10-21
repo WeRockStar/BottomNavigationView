@@ -13,4 +13,10 @@
         android:icon="@drawable/ic_settings"
         android:title="@string/menu_setting"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/menu_more"
+        android:enabled="true"
+        android:icon="@drawable/ic_more"
+        android:title="@string/menu_more"
+        app:showAsAction="ifRoom" />
 </menu>

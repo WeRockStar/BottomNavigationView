@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.werockstar.bottomnavigationview.R;
+import com.werockstar.bottomnavigationview.fragment.HomeFragment;
+import com.werockstar.bottomnavigationview.fragment.SettingFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,10 +30,14 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.menu_home:
-                        
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentFragment, new HomeFragment())
+                                .commit();
                         break;
                     case R.id.menu_settings:
-
+                        getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.contentFragment, new SettingFragment())
+                                .commit();
                         break;
                 }
                 return false;
