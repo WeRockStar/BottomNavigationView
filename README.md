@@ -6,5 +6,5 @@
 ```
 
 <p align="center">
-    <img src="Screenshot.png" alt="Screenshot sample app" style="width:40%"/>
+    <img src="Screenshot.png" alt="Screenshot sample app" style="max-width:40%"/>
 </p>
