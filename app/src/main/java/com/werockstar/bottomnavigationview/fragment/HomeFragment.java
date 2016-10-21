@@ -9,15 +9,16 @@ import android.view.ViewGroup;
 
 import com.werockstar.bottomnavigationview.R;
 
-public class TwoFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
-    public TwoFragment() {
+
+    public HomeFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_two, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
         return view;
     }
 

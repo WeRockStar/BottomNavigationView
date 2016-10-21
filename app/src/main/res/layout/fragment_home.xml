@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.werockstar.bottomnavigationview.fragment.OneFragment">
+    tools:context="com.werockstar.bottomnavigationview.fragment.HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

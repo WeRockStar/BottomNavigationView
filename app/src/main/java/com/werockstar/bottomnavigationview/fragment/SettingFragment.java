@@ -9,16 +9,15 @@ import android.view.ViewGroup;
 
 import com.werockstar.bottomnavigationview.R;
 
-public class OneFragment extends Fragment {
+public class SettingFragment extends Fragment {
 
-
-    public OneFragment() {
+    public SettingFragment() {
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_one, container, false);
+        View view = inflater.inflate(R.layout.fragment_setting, container, false);
         return view;
     }
 
