@@ -2,6 +2,7 @@ package com.werockstar.bottomnavigationview.activity;
 
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -22,26 +23,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bottom);
         setSupportActionBar(toolbar);
-
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bottom);
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.menu_home:
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.contentFragment, new HomeFragment())
-                                .commit();
+                        changeFragment(new HomeFragment());
                         break;
                     case R.id.menu_settings:
-                        getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.contentFragment, new SettingFragment())
-                                .commit();
+                        changeFragment(new SettingFragment());
                         break;
                 }
                 return false;
             }
         });
+    }
+
+    private void changeFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.contentFragment, fragment)
+                .commit();
     }
 }
