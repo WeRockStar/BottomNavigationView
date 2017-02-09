@@ -24,9 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        changeFragment(new HomeFragment());
+        
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bottom);
+        bottomNavigationView.getMenu().getItem(1).setChecked(true);
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -37,8 +38,10 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menu_settings:
                         changeFragment(new SettingFragment());
                         break;
+                    default:
+                        changeFragment(new SettingFragment());
                 }
-                return false;
+                return true;
             }
         });
     }
