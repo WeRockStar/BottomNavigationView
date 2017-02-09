@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.werockstar.bottomnavigationview.R;
+import com.werockstar.bottomnavigationview.fragment.AboutFragment;
 import com.werockstar.bottomnavigationview.fragment.HomeFragment;
 import com.werockstar.bottomnavigationview.fragment.SettingFragment;
 
@@ -24,9 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        
+
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation_bottom);
         bottomNavigationView.getMenu().getItem(1).setChecked(true);
+        changeFragment(new SettingFragment());
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -39,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                         changeFragment(new SettingFragment());
                         break;
                     default:
-                        changeFragment(new SettingFragment());
+                        changeFragment(new AboutFragment());
                 }
                 return true;
             }
